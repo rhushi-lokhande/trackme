@@ -1,0 +1,25 @@
+<div class="col-xs-12">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="#project of projects">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>{{project.name}}</h4>
+            </div>
+            <div class="panel-body">
+                <p>{{project.description}}</p>
+                <hr class="myHr" />
+                <div>
+                    <span class="tag" *ngFor="#tech of project.technology">{{tech}}</span>
+                </div>
+                <hr class="myHr" />
+                <p>Under : <b>{{project.manager.fName +' '+ project.manager.lName}} </b></p>
+                <hr class="myHr" />
+                <p>Client : {{project.client}} </p>
+                <hr class="myHr" />
+                <p>From : {{project.startDate}} </p>
+            </div>
+            <div class="panel-footer text-right">
+                <button class="btn btn-primary" (click)="test()">Details</button>
+            </div>
+        </div>
+    </div>
+</div>

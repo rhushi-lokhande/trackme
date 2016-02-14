@@ -1,0 +1,10 @@
+* {
+    border-radius: 0px !important;
+}
+body{
+    background-color: rgba(251, 251, 251, 0.55) !important;
+     border-radius: 0px !important;
+}
+.dashboarContainer .panel-footer {
+    padding: 1px 15px !important;
+}

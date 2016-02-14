@@ -1,0 +1,64 @@
+<div class="title">
+
+</div>
+<tabset>
+    <tab heading="Leave">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h4>Leaves</h4>
+                        </div>
+
+                        <div class="col-xs-6 text-right">
+                            <h4>Leaves Taken : 5 | Balance Leaves : 5</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div *ngFor="#leave of leaves" >
+                            <div class="col-xs-12">
+                                <label>From : {{leave.from}} To {{leave.to}}</label>
+                                <p>{{leave.reason}}</p>
+                                <p>{{leave.noOfDays}} Days</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <hr class="myHr row" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tab>
+    <tab heading="Request Leave">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Request Leaves</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-xs-6">
+                            <label>From</label>
+                            <input type="text" class="form-control" [(ngModel)]="leave.from"/>
+                        </div>
+                        <div class="form-group col-xs-6">
+                            <label>To</label>
+                            <input type="text" class="form-control" [(ngModel)]="leave.to"/>
+                        </div>
+                        <div class="form-group col-xs-12">
+                            <label>Reason</label>
+                            <textarea type="text" class="form-control" [(ngModel)]="leave.reason"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button class="btn btn-primary" (click)="requestForLeave()">Request</button>
+                </div>
+            </div>
+        </div>
+    </tab>
+</tabset>

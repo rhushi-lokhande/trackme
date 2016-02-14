@@ -1,0 +1,6 @@
+<div>
+    <div class="col-lg-12 text-right">
+        <pagination [totalItems]="totalItems" [itemsPerPage]='2' (pageChanged)="pageChanged($event)" [(ngModel)]="currentPage" [maxSize]="maxSize"
+        class="pagination-sm" [boundaryLinks]="true"></pagination>
+    </div>
+</div>

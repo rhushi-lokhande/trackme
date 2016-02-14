@@ -1,0 +1,164 @@
+<div class="title">
+
+</div>
+<tabset>
+    <tab heading="Tasks">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <h4>Tasks</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="form-group">
+                        <label>Project</label>
+                        <select class="form-control" #project (change)="getTaskByProject(project.value,'Incomplete')">
+                            <option *ngFor="#project of projects" value="{{project._id}}">{{project.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row" *ngIf="tasks.length==0">
+                        <div class="col-xs-12">
+                            <h4>No task pending...</h4>
+                        </div>
+                    </div>
+                    <div class="row" *ngFor="#task of tasks">
+                        <div class="col-xs-12">
+                            <label>{{task.title}}</label>
+                            <p>{{task.description}}</p>
+                        </div>
+                        <div class="col-xs-10">
+                            Data : {{task.complitionDate}} <b>|</b> Time : {{task.time}} hr
+                        </div>
+                        <div class="col-xs-2 text-right">
+                            <button class="btn btn-primary btn-sm" (click)="completeTask(task,project.value)"><i class="fa fa-check"></i> Done</button>
+                        </div>
+                        <div class="col-xs-12">
+                            <hr class="myHr row" />
+                        </div>
+
+                    </div>
+                    <div class="row" *ngIf="tasks.length>0">
+                        <div class="col-lg-12 text-right">
+                            <select class="no-of-pages" [(ngModel)]="limit" (change)="changeNoOfPages(project.value,'Incomplete')">
+                                <option value="2">2</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                            </select>
+                            <pagination [totalItems]="totalItems" [itemsPerPage]="limit" (pageChanged)="pageChanged($event,project.value,'Incomplete')"
+                            [(ngModel)]="currentPage" [maxSize]="maxSize" class="pagination-sm" [boundaryLinks]="true"></pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tab>
+
+    <tab heading="New Task">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <h4>Add Task</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12 form-group">
+                            <label>Project</label>
+                            <select class="form-control" [(ngModel)]="newTask.project">
+                                <option *ngFor="#project of projects" value="{{project._id}}">{{project.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-12 form-group">
+                            <label>Task</label>
+                            <input type="text" class="form-control" [(ngModel)]="newTask.title" />
+                        </div>
+                        <div class="col-lg-12 form-group">
+                            <label>Discription</label>
+                            <textarea type="text" class="form-control" [(ngModel)]="newTask.description"></textarea>
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label>Complition Date</label>
+                            <input type="text" class="form-control" [(ngModel)]="newTask.complitionDate" />
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label>Time</label>
+                            <input type="text" class="form-control" [(ngModel)]="newTask.time" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button class="btn btn-primary" (click)="addTask()">Add</button>
+                </div>
+            </div>
+        </div>
+    </tab>
+    <tab heading="Tasks History">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <h4>Tasks</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <div class="form-group">
+                        <label>Project</label>
+                        <select class="form-control" #histroy_project (change)="getTaskByProject(histroy_project.value,'Complete')">
+                            <option *ngFor="#project of projects" value="{{project._id}}">{{project.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row" *ngIf="histroyTasks.length==0">
+                        <div class="col-xs-12">
+                            <h4>No task </h4>
+                        </div>
+                    </div>
+                    <div class="row" *ngFor="#task of histroyTasks">
+                        <div class="col-xs-12">
+                            <label>{{task.title}}</label>
+                            <p>{{task.description}}</p>
+                        </div>
+                        <div class="col-xs-10">
+                            Data : {{task.complitionDate}} <b>|</b> Time : {{task.time}} hr
+                        </div>
+                        <div class="col-xs-12">
+                            <hr class="myHr row" />
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-lg-12 text-right">
+                            <select class="no-of-pages" [(ngModel)]="limit" (change)="changeNoOfPages(histroy_project.value,'Complete')">
+                                <option value="2">2</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                            </select>
+                            <pagination [totalItems]="historyTotalItems" [itemsPerPage]="limit" (pageChanged)="pageChanged($event,histroy_project.value,'Complete')"
+                            [(ngModel)]="historyCurrentPage" [maxSize]="maxSize" class="pagination-sm" [boundaryLinks]="true"></pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tab>
+    <tab heading="Login">
+
+        <div class="row">
+            <login bankname="RBC" accountid="4747" testfunctoin="testfunctoin"></login>
+        </div>
+    </tab>
+</tabset>

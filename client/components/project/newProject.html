@@ -1,0 +1,56 @@
+<div class="col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>New Project</h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    <label>Project Title</label>
+                    <input class="form-control" type="text" [(ngModel)]="newProject.name" />
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label>Project Details</label>
+                    <textarea class="form-control" rows="3" [(ngModel)]="newProject.description"></textarea>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label>Client</label>
+                    <input class="form-control" type="text" [(ngModel)]="newProject.client" />
+                </div>
+                <div class="col-xs-6 form-group">
+                    <label>Manager</label>
+                    <select class="form-control" [(ngModel)]="newProject.manager" placeholder="Select manager">
+                        <option selected="selected" value="">Selece manager</option>
+                        <option *ngFor="#dev of developerList" value="{{dev._id}}">{{dev.fName}}</option>
+                    </select>
+                </div>
+                <div class="col-xs-6 form-group">
+                    <label>Developer</label>
+                    <select class="form-control" [(ngModel)]="dev">
+                        <option selected="selected" value="">Selece developer</option>
+                        <option *ngFor="#dev of developerList" value="{{dev._id}}">{{dev.fName}}</option>
+                    </select>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label>Technology</label>
+                    <input class="form-control" type="text" [(ngModel)]="newProject.technology" />
+                </div>
+                <div class="col-xs-6 form-group">
+                    <label>Start Date</label>
+                    <input class="form-control" type="text" [(ngModel)]="newProject.startDate" />
+                </div>
+                <div class="col-xs-6 form-group">
+                    <label>End Date</label>
+                    <input class="form-control" type="text" [(ngModel)]="newProject.endDate" />
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer text-right">
+            <button class="btn btn-primary" (click)="addProject()"> Add Project</button>
+        </div>
+    </div>
+</div>
+
+
+
+

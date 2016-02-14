@@ -1,0 +1,153 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script src="/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="/systemjs/dist/system.src.js"></script>
+    <script src="/rxjs/bundles/Rx.js"></script>
+    <script src="/angular2/bundles/angular2.dev.js"></script>
+    <script src="/angular2/bundles/upgrade.dev.js"></script>
+    <script src="/css/main.css"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://rawgit.com/urish/angular2-material-build/master/angular2_material.css" />
+    <script src="https://rawgit.com/urish/angular2-material-build/master/angular2_material.dev.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    <style>
+        * {
+            border-radius: 0px !important;
+        }
+        
+        body {
+            background-color: rgba(251, 251, 251, 0.55) !important;
+            border-radius: 0px !important;
+            padding-top: 70px;
+        }
+        
+        .dashboarContainer .panel-footer {
+            padding: 1px 15px !important;
+        }
+        
+        .dashboarContainer a {
+            color: #333 !important;
+        }
+        
+        .dashboarContainer a:hover {
+            text-decoration: none !important;
+        }
+        
+        .dashboarContainer .panel-body {
+            height: 80px;
+        }
+        
+        .tag {
+            background-color: #EFEEEE;
+            padding: 5px 10px;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        .myHr {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .nav-tabs {
+            margin-bottom: 10px;
+        }
+        
+        .navbar-default {
+            background-color: #003EC4;
+            border-color: #003EC4;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.44);
+            color: #FFFFFF !important;
+        }
+        
+        .navbar-default .navbar-brand,
+        .navbar-nav a {
+            color: #FFFFFF !important;
+        }
+        
+        .nav-tabs {
+            border: 1px solid #ddd;
+            background-color: #FFF;
+            box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:focus,
+        .nav-tabs>li.active>a:hover {
+            border: none;
+            border-bottom: solid 2px #003EC4;
+        }
+        
+        .panel {
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+        
+        .left-nav {
+            max-width: 215px;
+            z-index: 1;
+        }
+        
+        .left-nav > div {
+            background-color: #FFF;
+            max-width: 215px;
+            box-shadow: 1px 0px 2px rgba(0, 0, 0, .2);
+            height: 668px;
+        }
+        
+        .title {
+            display: none;
+            height: 140px;
+            background-image: url('/images/title1.png');
+            background-size: cover;
+            background-position-y: 354px;
+            background-color: rgba(0, 62, 196, 0.75);
+            box-shadow: inset 1px -1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .no-of-pages {
+            float: right;
+            margin: 20px 0px;
+            padding: 5px;
+            border: 1px solid #DDDDDD;
+            border-left: none;
+        }
+    </style>
+    <base href="/">
+</head>
+
+<body>
+
+    <app>Loading......</app>
+
+    <script>
+        System.config({
+        defaultJSExtensions: true,
+        packages: {        
+            app: {
+                defaultExtension: 'js'
+            },
+           'ng2-bootstrap': {
+                defaultExtension: 'js'
+            }
+        },
+        paths: {
+            'angular2/upgrade': '../node_modules/angular2/upgrade'
+          },
+        map: {
+            'ng2-bootstrap': '/ng2-bootstrap'
+        }   
+      });
+       System.import('/rxjs/operator/map');
+        System.import('scripts/src/bootstrap');
+    </script>
+</body>
+
+</html>

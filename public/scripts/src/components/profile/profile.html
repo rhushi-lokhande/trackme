@@ -1,0 +1,53 @@
+<div class="col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h4>Profile Details</h4>
+                </div>
+                <div class="col-lg-4">
+                    <button *ngIf="!isEdit" (click)="eidtProfile()" class="btn btn-primary pull-right">Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div *ngIf="!isEdit">
+                <p><b>Name : </b>{{dev.fName}} {{dev.lName}}</p>
+                <p><b>Email : </b>{{dev.email}}</p>
+                <p><b>Mobile No :  </b>{{dev.mobileNo}}</p>
+                <p><b>Experience : </b>{{dev.experience}} Yr.</p>
+                <p><b>Designation :</b> {{dev.designation}}</p>
+            </div>
+            <div *ngIf="isEdit">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" [(ngModel)]="fName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" [(ngModel)]="lName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" [(ngModel)]="email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Mobile No</label>
+                    <input type="text" [(ngModel)]="dev.mobileNo" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Experience</label>
+                    <input type="text" [(ngModel)]="experience" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Designation</label>
+                    <input type="text" [(ngModel)]="designation" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer text-right" *ngIf="isEdit">
+            <button class="btn btn-primary" (click)="saveProfile()">Save</button>
+            <button class="btn btn-danger" (click)="cancelEditProfile()">Cancel</button>
+        </div>
+    </div>
+</div>

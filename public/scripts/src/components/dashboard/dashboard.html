@@ -1,0 +1,107 @@
+<div class="col-xs-12 dashboarContainer" *ngIf="gd.devIsLogin">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <a [routerLink]="['/Project']">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <small>Current working project : 2</small>
+                    <br/>
+                    <small>Finish project : 18</small>
+                    <br/>
+                    <small>Total project : {{gd.dev.project.length}}</small>
+                    <br/>
+                </div>
+                <div class="panel-footer">
+                    <h5><b>Project</b> <i class="fa fa-arrow-right pull-right"></i></h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <a [routerLink]="['/Effort']">
+                <div class="panel-body">
+                    <small>Added New user : 2 day ago</small>
+                    <br/>
+                    <small>Last Work On : Trace Me</small>
+                    <br/>
+                    <small>Last Update : 12 Jan 2016</small>
+                    <br/>
+                </div>
+                <div class="panel-footer">
+                    <h5><b>Effort</b> <i class="fa fa-arrow-right pull-right"></i></h5>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <a [routerLink]="['/NewProject']">
+                <div class="panel-body">
+                    <small>Last Project : ValleyProteins</small>
+                    <br/>
+                    <small>Added On : 12 Jan 2016</small>
+                    <br/>
+                    <small>Last Task : 12 Jan 2016</small>
+                    <br/>
+                </div>
+                <div class="panel-footer">
+                    <h5><b>New Project</b> <i class="fa fa-arrow-right pull-right"></i></h5>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <a [routerLink]="['/Profile']">
+                <div class="panel-body">
+                    <small>Name : {{gd.dev.fName}} {{gd.dev.lName}}</small>
+                    <br/>
+                    <small>Mobile : {{gd.dev.mobileNo[0]}}</small>
+                    <br/>
+                    <small>Email : {{gd.dev.email[0]}}</small>
+                    <br/>
+                </div>
+                <div class="panel-footer">
+                    <h5><b>Profile</b> <i class="fa fa-arrow-right pull-right"></i></h5>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <a [routerLink]="['/Leave']">
+                <div class="panel-body">
+                    <small>Last Leave : 15 Des 2015</small>
+                    <br/>
+                    <small>Totals Leave Taken : 5</small>
+                    <br/>
+                    <small>Balance Leave : 5</small>
+                    <br/>
+                </div>
+                <div class="panel-footer">
+                    <h5><b>Leaves</b> <i class="fa fa-arrow-right pull-right"></i></h5>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Batch</h1>
+            </div>
+            <div class="panel-footer">
+                <h5>Footer</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Batch</h1>
+            </div>
+            <div class="panel-footer">
+                <h5>Footer</h5>
+            </div>
+        </div>
+    </div>
+</div>
